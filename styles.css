@@ -347,7 +347,7 @@ header .navbar ul li a:hover {
 
 /* about section starts */
 .about {
-  background-image:url(pixel.jpg);
+  background:#96DED1;
 }
 .about .row {
   display: flex;
