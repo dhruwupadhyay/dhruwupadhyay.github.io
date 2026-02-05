@@ -4,408 +4,403 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="dhruw upadhyay, portfolio, dhruw, full stack dev, personal portfolio lifecodes, portfolio design, portfolio website, personal portfolio" />
-    <meta name="description" content="Welcome to Dhruw's Portfolio. ServiceNow Developer." />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <meta name="keywords" content="dhruw upadhyay, portfolio, servicenow developer, itsm, itom" />
+    <meta name="description" content="Dhruw Upadhyay - ServiceNow Developer specializing in ITSM, ITOM, and Service Portal Development." />
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Modern Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <title>Portfolio | Dhruw Upadhyay</title>
+    <title>Dhruw Upadhyay | ServiceNow Developer</title>
     
-    <script>
-      const express = require('express');
-const bodyParser = require('body-parser');
-const nodemailer = require('nodemailer');
-
-const app = express();
-const port = 3000;
-
-// Body parser middleware
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
-// Serve static files (CSS, images, etc.)
-app.use(express.static('public'));
-
-// Set up nodemailer
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: 'your-email@gmail.com',
-    pass: 'your-email-password',
-  },
-});
-
-// Define a route for handling form submissions
-app.post('/submit-form', (req, res) => {
-  const { name, email, phone, message } = req.body;
-
-  // Create the email content
-  const mailOptions = {
-    from: 'your-email@gmail.com',
-    to: 'recipient-email@example.com', // Change this to your recipient email
-    subject: 'New Contact Form Submission',
-    html: `
-      <p><strong>Name:</strong> ${name}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Phone:</strong> ${phone}</p>
-      <p><strong>Message:</strong> ${message}</p>
-    `,
-  };
-
-  // Send the email
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      return res.status(500).send(error.toString());
-    }
-    res.status(200).send('Message sent: ' + info.response);
-  });
-});
-
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
-
-    </script>
+    <link rel="stylesheet" href="modern-styles.css">
 </head>
 
-<body oncontextmenu="return false">
-
-<!-- navbar starts -->
-<header>
-        <a href="/" class="logo"> Dhruw</a>
-
-        <div id="menu" class="fas fa-bars"></div>
-        <nav class="navbar">
-            <ul>
-            <li><a class="active" href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-</header>
-<!-- navbar ends -->
-
-
-<!-- hero section starts -->
-<section class="home" id="home">
-    
-    <div id="particles-js"></div>
-
-    <div class="content">
-    <h2>Hi There,<br/> Dhruw<span>Upadhyay</span></h2>
-    <p>i am into <span class="typing-text"></span></p>
-    <a href="#about" class="btn"><span>About Me</span>
-      <i class="fas fa-arrow-circle-down"></i>
-    </a>
-    <div class="socials">
-        <ul class="social-icons">
-          <li><a class="linkedin" aria-label="LinkedIn" href="https://www.linkedin.com/in/dhruw-nath-upadhyay-676467202/" target="_blank"><i class="fab fa-linkedin"></i></a></li> 
-          <li><a class="github" aria-label="GitHub" href="https://github.com/dhruwupadhyay" target="_blank"><i class="fab fa-github"></i></a></li>
-          <li><a class="twitter" aria-label="Twitter" href="https://twitter.com/dhruw_upadhyay" target="_blank"><i class="fab fa-twitter"></i></a></li>
-          <li><a class="telegram" aria-label="Telegram" href="https://t.me/dhruw_upadhyay" target="_blank"><i class="fab fa-telegram-plane"></i></a></li>
-          <li><a class="instagram" aria-label="Instagram" href="https://instagram.com/jbn_dhruw?igshid=OGQ5ZDc2ODk2ZA=="><i class="fab fa-instagram" target="_blank"></i></a></li>
-          <li><a class="facebook" aria-label="Dev" href="https://www.facebook.com/iamdhruwupadhyay?mibextid=2JQ9oc" target="_blank"><i class="fab fa-facebook"></i></a></li>
-        </ul>
-      </div>
-    </div>
-<div class="image">
-    <img draggable="false" class="tilt" src="about1.jpg" alt="">
-
-</section>
-<!-- hero section ends -->
-
-
-<!-- about section starts -->
-<section class="about" id="about">
-    <h2 class="heading"><i class="fas fa-user-alt"></i> About <span>Me</span></h2>
-    
-    <div class="row">
-
-    <div class="image">
-        <img draggable="false" class="tilt" src="" alt="">
-    </div>
-    <div class="content">
-        <h3>I'm Dhruw</h3>
-        <span class="tag">ServiceNow Developer</span>
-        
-        <p>"ServiceNow Developer with hands-on experience in ITSM, ITOM, and Service Portal development. Currently working
-at Tata Consultancy Services with strong expertise in CMDB, Incident and Request Management, Service Mapping,
-MID Server configuration, Flow Designer automation, and Service Portal customization. Experienced in fixing portal-
-related issues, aligning portal and backend logic, and delivering ITIL-aligned automation solutions." </p>
-        
-        <div class="box-container">
-            <!-- <div class="box">
-              <p><span> age: </span> 20</p>
-              <p><span> phone : </span> +91 XXX-XXX-XXXX</p>
-            </div> -->
-            <div class="box">
-              <p><span> email : </span> dhruwupadhyay2@gmail.com</p>
-              <p><span> place : </span> Barwadih, India - 822111</p>
-            </div>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <p class="loader-text">Loading Experience...</p>
         </div>
-        
-        <div class="resumebtn">
-            <a href="https://drive.google.com/file/d/1JUQdwASpGvDNaYK-UDWeyKnn_wrI_cb-/view?usp=drivesdk"btn"><span>Resume</span>
-                <i class="fas fa-chevron-right"></i>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-bracket">&lt;</span>
+                Dhruw
+                <span class="logo-bracket">/&gt;</span>
             </a>
-        </div>
-
-    </div>
-    </div>
-</section>
-<!-- about section ends -->
-
-<!-- skills section starts -->
-<!-- ... (your existing HTML code) ... -->
-
-<!-- Skills Section -->
-<section class="skills" id="skills">
-    <h2 class="heading"><i class="fas fa-laptop-code"></i> Skills & <span>Abilities</span></h2>
-    <div class="container">
-      <div class="row" id="skillsContainer">
-  
-        <!-- Skill: Microsoft Office -->
-        <div class="bar">
-          <div class="info">
-            <span><a href="#">ServiceNow</a></span>
-          </div>
-        </div>
-  
-        <!-- Skill: Python -->
-        <div class="bar">
-          <div class="info">
-            <span><a href="https://drive.google.com/file/d/1m4a8sv1-ZN0jng9Oknk5J1vgGKSx7QlF/view?usp=drivesdk">Python</a></span>
-          </div>
-        </div>
-  
-        <!-- Skill: Database Management -->
-        <div class="bar">
-          <div class="info">
-            <span><a href="https://drive.google.com/file/d/1L1Ic8PYTR66XPJstCtchzqRYfjGPB0fL/view?usp=drivesdk">Database Management</a></span>
-          </div>
-        </div>
-  
-        <!-- Skill: MySQL -->
-        <div class="bar">
-          <div class="info">
-            <span>MySQL</span>
-          </div>
-        </div>
-  
-        <!-- Skill: Generative AI -->
-        <div class="bar">
-          <div class="info">
-            <span><a href="https://www.linkedin.com/learning/certificates/54153f7d4aeeba0d00753a1e992c823abe5c486ea445a600867bbac7d385e11c?trk=share_certificate">Generative AI</a></span>
-          </div>
-        </div>
-  
-        <!-- Skill: Data Analytics -->
-        <div class="bar">
-          <div class="info">
-            <span><a href="https://www.credly.com/badges/d9149d0d-d3d1-4bdf-ad40-5968016de54c/public_url">Data Analytics</a></span>
-          </div>
-        </div>
-  
-        <!-- Skill: Machine Learning -->
-        <div class="bar">
-          <div class="info">
-            <span>Machine Learning</span>
-          </div>
-        </div>
-  
-        <!-- Skill: Full Stack Web Development -->
-        <div class="bar">
-          <div class="info">
-            <span><a href="https://drive.google.com/file/d/1vtyH9RXd9VYnUFnUvM-z0q3bUvAOSDUO/view?usp=drivesdk">Full Stack Web Development</a></span>
-          </div>
-        </div>
-  
-        <!-- Skill: Graphics Designer -->
-        <div class="bar">
-          <div class="info">
-            <span><a href="https://drive.google.com/file/d/1OQBshCT9kczvXGE4BI7OE2ttz8oSc95W/view?usp=drivesdk">Graphics Designer</a></span>
-          </div>
-        </div>
-  
-        <!-- ... Add more skills as needed -->
-  
-      </div>
-    </div>
-  </section>
-  
-  <!-- skills section ends -->
-
-
-<!-- education section starts -->
-<section class="education" id="education">
-
-  <h1 class="heading"><i class="fas fa-graduation-cap"></i> My <span>Education</span></h1>
-
-    <p class="qoute">Education is not the learning of facts, but the training of the mind to think.</p>
-
-    <div class="box-container">
-
-    <div class="box">
-        <div class="image">
-        <img draggable="false" src="BIT.jpg" alt="">
-        </div>
-        <div class="content">
-        <h3>Bachelor of Computer Applications</h3>
-        <p>Birla Institute of Technology | Ranchi</p>
-        <h4>2020-2023 | Completed</h4>
-        </div>
-    </div>
-
-    <div class="box">
-      <div class="image">
-      <img draggable="false" src="dav.jpg" alt="">
-      </div>
-      <div class="content">
-      <h3>Higher Secondary Schooling </h3>
-      <p>DAV Public School,Gandhinagar | CBSE</p>
-      <h4>2018-2020 | Completed</h4>
-      </div>
-    </div>
-
-</div>
-</section>
-<!-- education section ends -->
-
-
-<!-- work project section starts -->
-<section class="work" id="work">
-
-    <h2 class="heading"><i class="fas fa-laptop-code"></i> Projects <span>Made</span></h2>
-  
-    <div class="box-container">
-      <!-- Sample Project -->
-      <div class="box">
-        <img src="project-image.jpg" alt="Project Image">
-        <div class="content">
-          <div class="tag">
-            <h3>Movie Recommender System</h3>
-          </div>
-        </div>
-      </div>
-      <!-- End of Sample Project -->
-  <!-- Sample Project -->
-  <div class="box">
-    <img src="project-image.jpg" alt="Project Image">
-    <div class="content">
-      <div class="tag">
-        <h3>ChatBot</h3>
-      </div>
-    </div>
-  </div><!-- Sample Project -->
-  <div class="box">
-    <img src="project-image.jpg" alt="Project Image">
-    <div class="content">
-      <div class="tag">
-        <h3>Project Title</h3>
-      </div>
-    </div>
-  </div>
-    </div>
-  
-    <div class="viewall">
-      <a href="/projects" class="btn"><span>View All</span>
-        <i class="fas fa-arrow-right"></i>
-      </a>
-    </div>
-  
-  </section>
-  <!-- work project section ends -->
-  
-
-<!-- contact section starts -->
-<section class="contact" id="contact">
-  
-  <h2 class="heading"><i class="fas fa-headset"></i> Get in <span>Touch</span></h2>
-
-  <div class="container">
-    <div class="content">
-      <div class="image-box">
-        <img draggable="false" src="about1.jpg" alt="">
-      </div>
-    <form id="contact-form">
-      
-      <div class="form-group">
-        <div class="field">
-          <input type="text" name="name" placeholder="Name" required>
-          <i class='fas fa-user'></i>
-        </div>
-        <div class="field">
-          <input type="text" name="email" placeholder="Email" required>
-          <i class='fas fa-envelope'></i>
-        </div>
-        <div class="field">
-          <input type="text" name="phone" placeholder="Phone">
-          <i class='fas fa-phone-alt'></i>
-        </div>
-        <div class="message">
-        <textarea placeholder="Message" name="message" required></textarea>
-        <i class="fas fa-comment-dots"></i>
-        </div>
-        </div>
-      <div class="button-area">
-        <button type="submit">
-          Submit <i class="fa fa-paper-plane"></i></button>
-      </div>
-    </form>
-  </div>
-  </div>
-</section>
-<!-- contact section ends -->
-
-
-<!-- footer section starts -->
-<section class="footer">
-
-  <div class="box-container">
-
-      <div class="box">
-          <h3>Dhruw's Portfolio</h3>
-          <p>Thank you for visiting my personal portfolio website. Connect with me over socials. <br/> <br/> Keep Rising 🚀. Connect with me over live chat!</p>
-      </div>
-
-      <div class="box">
-          <h3>quick links</h3>
-          <a href="#home"><i class="fas fa-chevron-circle-right"></i> home</a>
-          <a href="#about"><i class="fas fa-chevron-circle-right"></i> about</a>
-          <a href="#skills"><i class="fas fa-chevron-circle-right"></i> skills</a>
-          <a href="#education"><i class="fas fa-chevron-circle-right"></i> education</a>
-          <a href="#work"><i class="fas fa-chevron-circle-right"></i> work</a>
-    
-        </div>
-
-      <div class="box">
-          <h3>contact info</h3>
-          <p> <i class="fas fa-phone"></i>+91 XXX-XXX-XXXX</p>
-          <p> <i class="fas fa-envelope"></i>dhruwupadhyay2@gmail.com</p>
-          <p> <i class="fas fa-map-marked-alt"></i>Barwadih, India-822111</p>
-          <div class="share">
-
             
-              <a class="linkedin" aria-label="LinkedIn" href="https://www.linkedin.com/in/dhruw-nath-upadhyay-676467202/" target="_blank"><i class="fab fa-linkedin"></i></a>
-              <a class="github" aria-label="GitHub" href="https://github.com/dhruwupadhyay" target="_blank"><i class="fab fa-github"></i></a>
-              <a class="twitter" aria-label="Twitter" href="https://twitter.com/dhruw_upadhyay" target="_blank"><i class="fab fa-twitter"></i></a>
-              <a class="telegram" aria-label="Telegram" href="https://t.me/dhruw_upadhyay" target="_blank"><i class="fab fa-telegram-plane"></i></a>
-              <a class="instagram" aria-label="Instagram" href="https://instagram.com/jbn_dhruw?igshid=OGQ5ZDc2ODk2ZA=="><i class="fab fa-instagram" target="_blank"></i></a>
-              
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="grid-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-label">
+                    <span class="status-dot"></span>
+                    Available for opportunities
+                </div>
+                <h1 class="hero-title">
+                    <span class="greeting">Hi, I'm</span>
+                    <span class="name-wrapper">
+                        <span class="name">Dhruw Upadhyay</span>
+                    </span>
+                </h1>
+                <div class="hero-subtitle">
+                    <span class="role-text">ServiceNow Developer</span>
+                    <span class="divider">|</span>
+                    <span class="specialization">ITSM • ITOM • Service Portal</span>
+                </div>
+                <p class="hero-description">
+                    Building automation solutions and enhancing enterprise service management at Tata Consultancy Services
+                </p>
+                
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>View Projects</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span>Get In Touch</span>
+                    </a>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/dhruw-nath-upadhyay-676467202/" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/dhruwupadhyay" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://twitter.com/dhruw_upadhyay" target="_blank" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="mailto:dhruwupadhyay2@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
             </div>
-      </div>
-  </div>
+            
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <i class="fas fa-cogs"></i>
+                    <span>ITSM</span>
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-network-wired"></i>
+                    <span>ITOM</span>
+                </div>
+                <div class="floating-card card-3">
+                    <i class="fas fa-code"></i>
+                    <span>Development</span>
+                </div>
+            </div>
+        </div>
+        
+        <a href="#about" class="scroll-indicator">
+            <span class="scroll-text">Scroll</span>
+            <div class="scroll-line"></div>
+        </a>
+    </section>
 
-  <h1 class="credit">Designed with <i class="fa fa-heart pulse"></i> by <a href="https://www.linkedin.com/in/dhruw-nath-upadhyay-676467202/"> Dhruw Nath Upadhyay</a></h1>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Get to know me</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-intro">
+                        ServiceNow Developer with hands-on experience in ITSM, ITOM, and Service Portal development. 
+                        Currently working at Tata Consultancy Services with strong expertise in CMDB, Incident and 
+                        Request Management, Service Mapping, MID Server configuration, Flow Designer automation, and 
+                        Service Portal customization.
+                    </p>
+                    
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h3>Current Role</h3>
+                                <p>ServiceNow Developer at TCS</p>
+                            </div>
+                        </div>
+                        
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h3>Location</h3>
+                                <p>New Delhi, India</p>
+                            </div>
+                        </div>
+                        
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h3>Education</h3>
+                                <p>BCA, BIT Mesra</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-cta">
+                        <a href="https://drive.google.com/file/d/1JUQdwASpGvDNaYK-UDWeyKnn_wrI_cb-/view?usp=drivesdk" 
+                           class="btn btn-primary" target="_blank">
+                            <i class="fas fa-download"></i>
+                            <span>Download Resume</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="8">0</div>
+                        <div class="stat-label">Months Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="15">0</div>
+                        <div class="stat-label">Skills Mastered</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="5">0</div>
+                        <div class="stat-label">Certifications</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="2">0</div>
+                        <div class="stat-label">Major Projects</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</section>
-<!-- footer section ends -->
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">What I bring to the table</span>
+                <h2 class="section-title">Technical Skills</h2>
+            </div>
+            
+            <div class="skills-grid">
+                <!-- Skeleton loaders will be replaced -->
+                <div class="skill-card skeleton">
+                    <div class="skeleton-icon"></div>
+                    <div class="skeleton-text"></div>
+                    <div class="skeleton-bar"></div>
+                </div>
+                <div class="skill-card skeleton">
+                    <div class="skeleton-icon"></div>
+                    <div class="skeleton-text"></div>
+                    <div class="skeleton-bar"></div>
+                </div>
+                <div class="skill-card skeleton">
+                    <div class="skeleton-icon"></div>
+                    <div class="skeleton-text"></div>
+                    <div class="skeleton-bar"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">My journey</span>
+                <h2 class="section-title">Professional Experience</h2>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item skeleton">
+                    <div class="skeleton-timeline"></div>
+                </div>
+                <div class="timeline-item skeleton">
+                    <div class="skeleton-timeline"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">What I've built</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card skeleton">
+                    <div class="skeleton-project"></div>
+                </div>
+                <div class="project-card skeleton">
+                    <div class="skeleton-project"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Let's connect</span>
+                <h2 class="section-title">Get In Touch</h2>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p class="contact-intro">
+                        I'm always open to discussing new opportunities, collaborations, or just having a chat about ServiceNow and technology.
+                    </p>
+                    
+                    <div class="contact-details">
+                        <a href="mailto:dhruwupadhyay2@gmail.com" class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <span class="contact-label">Email</span>
+                                <span class="contact-value">dhruwupadhyay2@gmail.com</span>
+                            </div>
+                        </a>
+                        
+                        <a href="tel:+919546907540" class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <span class="contact-label">Phone</span>
+                                <span class="contact-value">+91-9546907540</span>
+                            </div>
+                        </a>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <span class="contact-label">Location</span>
+                                <span class="contact-value">New Delhi, India</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-social">
+                        <a href="https://www.linkedin.com/in/dhruw-nath-upadhyay-676467202/" target="_blank" class="social-btn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/dhruwupadhyay" target="_blank" class="social-btn">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://twitter.com/dhruw_upadhyay" target="_blank" class="social-btn">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://t.me/dhruw_upadhyay" target="_blank" class="social-btn">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Dhruw Upadhyay</h3>
+                    <p>ServiceNow Developer | ITSM | ITOM Specialist</p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dhruw Upadhyay. Designed with <i class="fas fa-heart"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="modern-script.js"></script>
 </body>
 </html>
